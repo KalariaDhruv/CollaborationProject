@@ -1,0 +1,16 @@
+<div class="container">
+<b>Search</b><input type="text" ng-model="searchTxt">
+<div class="row" style="width:200px">
+<div ng-repeat="job in jobs | filter:searchTxt | orderBy:'-postedOn'">
+<div class="panel panel-info">
+<div class="panel-heading"><a href="#/getjob/{{job.id}}">{{job.jobTitle}}</a></div>
+
+
+<div class="panel-body">
+	<b>Posted On</b>{{job.PostedOn | date:'medium'}}<br>
+	<b>Skills Required</b>{{job.skillRequired}}
+</div>
+</div>
+</div>
+</div>
+</div>

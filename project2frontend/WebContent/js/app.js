@@ -16,6 +16,18 @@ app.config(function($routeProvider){
 		templateUrl:'views/edituserprofile.html',
 		controller:'UserController'
 	})
+	.when('/addjob',{
+		templateUrl:'views/jobform.html',
+		controller:'JobCtrl'
+	})
+	.when('/alljobs',{
+		templateUrl:'views/jobslist.html',
+		controller:'JobCtrl'
+	})
+	.when('/getjob/:id',{
+		templateUrl:'views/jobdetail.html',
+		controller:'JobCtrl'
+	})
 	.otherwise({
 		templateUrl:'views/home.html'
 	})
