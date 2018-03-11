@@ -1,0 +1,12 @@
+<div class="panel panel-info">
+<div class="panel-heading">
+{{blog.blogTitle}}<br>
+<b>Posted On: </b> {{blog.postedOn | date:'medium'}}<br>
+<b>Posted By: </b> {{blog.postedBy.firstname}} &nbsp; {{blog.postedBy.lastname}}
+</div>
+<div class="panel-body">
+<p ng-bind-html="content"></p>
+</div>
+</div>
+<button type="button" class="btn btn-primary" ng-click="approve(blog)">Approve</button> &nbsp;
+<button type="button" class="btn btn-warning" ng-click="reject(blog)">Reject</button>

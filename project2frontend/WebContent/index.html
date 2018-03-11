@@ -44,6 +44,15 @@
 				<li><a href="#/alljobs">Get All Jobs</a></li>
 			</ul></li>
 			
+				
+			<li class="dropdown"><a href="" class="dropdown-toggle"
+		data-toggle="dropdown" ng-show="loggedInUser.firstname!=undefined">Blog<b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				<li><a href="#/addblog">AddBlog</a></li>
+		 	<li><a href="#/blogsnotapproved" ng-show="loggedInUser.role=='ADMIN'">Blogs waiting for approval</a></li>
+			<li><a href="#/blogsapproved">Blogs </a></li>
+		 	</ul></li>
+						
 			<li><a href="#" ng-show="loggedInUser.firstname!=undefined">Hi {{loggedInUser.firstname}}&nbsp;{{loggedInUser.lastname}}</a></li>
 			<li><a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined">Logout</a></li>
 			
@@ -67,5 +76,7 @@
 <script type="text/javascript" src="services/userservice.js"></script>
 <script type="text/javascript" src="controllers/jobcontroller.js"></script>
 <script type="text/javascript" src="services/jobservice.js"></script>
+<script type="text/javascript" src="controllers/blogcontroller.js"></script>
+<script type="text/javascript" src="services/blogservice.js"></script>
+<script type="text/javascript" src="controllers/blogdetailscontroller.js"></script>
 </html>
-				
