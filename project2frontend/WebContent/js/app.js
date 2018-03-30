@@ -48,8 +48,26 @@ app.config(function($routeProvider){
 		templateUrl:'views/blogapprovalform.html',
 		controller:'BlogDetailsCtrl'
 	})
+	
+	.when('/getblognotapproved/:id',{
+		templateUrl:'views/blogapprovalform.html',
+		controller:'BlogDetailsCtrl'
+	})
+	.when('/getnotification/:id',{
+		templateUrl:'views/notificationdetails.html',
+		controller:'NotificationCtrl'
+	})
+	.when('/home',{
+		templateUrl:'views/home.html',
+		controller:'NotificationCtrl'
+	})
+	.when('/uploadprofilepic',{
+		templateUrl:'views/uploadprofilepic.html'
+	})
+	
 	.otherwise({
-		templateUrl:'views/home.html'
+		templateUrl:'views/home.html',
+		controller:'NotificationCtrl'
 	})
 })
 app.run(function($location,$rootScope,$cookieStore,UserService){

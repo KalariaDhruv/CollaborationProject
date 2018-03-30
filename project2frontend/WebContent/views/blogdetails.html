@@ -1,13 +1,18 @@
-<div class="panel ppanel-info">
+<div class="panel panel-info">
 <div class="panel-heading">
 {{blog.blogTitle}}<br>
 <b>Posted On: </b> {{blog.postedOn | date:'medium'}}<br>
 <b>Posted By: </b> {{blog.postedBy.firstname}} &nbsp; {{blog.postedBy.lastname}}
+<img src="http://localhost:8083/project2middleware/getimage/{{blog.postedBy.email}}" alt="" height="40px" width="40px">
 </div>
 <div class="panel-body">
-<p ng-bind-html="content"></p>
+<p ng-bind-html="content"></p><br>
+
+<div>
+
+<a><span class="glyphicon glyphicon-thumbs-up" ng-class="isLiked?'liked':'default'" ng-click="updateLikes(blog.id)">
+</span></a>
+{{blog.likes}} likes
 </div>
 </div>
-
-
-like
+</div>
