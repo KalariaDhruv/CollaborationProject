@@ -100,8 +100,8 @@ public class BlogPostController
 	}
 	
 	
-	@RequestMapping(value="/reject",method=RequestMethod.PUT)
-	public ResponseEntity<?> reject(@RequestBody BlogPost blog,HttpSession session)
+	@RequestMapping(value="/reject/{rejectionReason}",method=RequestMethod.PUT)
+	public ResponseEntity<?> reject(@RequestBody BlogPost blog,@PathVariable String rejectionReason,HttpSession session)
 	{
 		String email=(String)session.getAttribute("loginId");
 		if(email==null){
@@ -113,7 +113,7 @@ public class BlogPostController
 			ErrorClazz error=new ErrorClazz(7,"Access denied");
 			return new ResponseEntity<ErrorClazz>(error,HttpStatus.UNAUTHORIZED);
 		}
-		blogPostDao.reject(blog);
+		blogPostDao.reject(blog,rejectionReason);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 }
