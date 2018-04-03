@@ -42,7 +42,7 @@
 			</button>
 			
 						<div class="navbar-hader">
-							<a class="navbar-brand" href="#/"><img src="resources/images/niit.jpg" width="130" height="30">
+							<a class="navbar-brand" href="#/"><img src="resources/images/live.jpg" width="150" height="40">
 						</a></div>
 				
 				<div class="collapse navbar-collapse" id="collapse-example">
@@ -76,7 +76,7 @@
 				 <li><a href="#/friends">Friends</a></li>
 				</ul></li>
 					
-			<li><a href="#/uploadprofilepic">
+			<li><a href="#/uploadprofilepic" ng-show="loggedInUser.firstname!=undefined">
 		 	<img src="http://localhost:9090/project2middleware/getimage/{{loggedInUser.email}}" alt="Upload ProfilePic" height="40px" width="40px" class="img-rounded"></a></li>
 		 	
 		 	
@@ -93,6 +93,8 @@
 				</span>
 				</ul>
 				</li>
+				
+				<li><a href="#chat" ng-show="loggedInUser.firstname">ChatRoom</a></li>
 						
 			<li><a href="#" ng-show="loggedInUser.firstname!=undefined">Hi {{loggedInUser.firstname}}&nbsp;{{loggedInUser.lastname}}</a></li>
 			<li><a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined">Logout</a></li>
@@ -127,5 +129,11 @@
 
 <script type="text/javascript" src="services/friendservice.js"></script>
 <script type="text/javascript" src="controllers/friendcontroller.js"></script>
+
+<script type="text/javascript" src="js/sockjs/sockjs.min.js"></script>
+<script type="text/javascript" src="js/stomp/dist/stomp.min.js"></script>
+
+<script type="text/javascript" src="services/chatservice.js"></script>
+<script type="text/javascript" src="controllers/chatcontroller.js"></script>
 
 </html>
